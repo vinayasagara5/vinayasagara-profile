@@ -1,0 +1,51 @@
+.bellCardConteiner {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8.4px;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2) 27.5%,
+      rgba(22, 93, 255, 0.16) 157.71%
+    ),
+    #fff;
+  box-shadow: 0px 0.7px 0.7px 0px rgba(0, 0, 0, 0.04),
+    0px 2.8px 7px 0px rgba(0, 0, 0, 0.04);
+  width: 189.7px;
+  height: 171.5px;
+  padding: 14px;
+  gap: 20px;
+  min-width: 185px;
+  .bellIconCard {
+    display: flex;
+    justify-content: space-between;
+    .saveIcon {
+      color: var(--grey-900, #19191a);
+      text-align: right;
+      //   font-family: Inter;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 10.92px */
+    }
+  }
+  .bellIconContent {
+    color: var(--grey-900, #19191a);
+    // font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 16.8px */
+  }
+  .bellIconInput {
+    display: flex;
+    width: 161.7px;
+    height: 35px;
+    padding: 8.4px 11.2px;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+    border-radius: 5.6px;
+    border: 0.7px solid var(--neutral-300, #d4d4d4);
+    background: #fff;
+  }
+}

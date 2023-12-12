@@ -1,0 +1,270 @@
+@mixin mobile {
+  @media (max-width: 520px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+
+$background-color-gradient: radial-gradient(
+  92.19% 89.74% at 32.27% 91.27%,
+  rgba(31, 169, 17, 0.81) 17.21%,
+  #2f15d0 64.58%,
+  rgba(0, 0, 0, 1) 100%
+);
+
+.landing {
+  display: flex;
+  @include mobile {
+    flex-direction: column;
+    gap: 10px;
+  }
+  @include tablet {
+  }
+  p {
+    margin: 0;
+  }
+  .leftColumn {
+    flex: 5;
+    background: $background-color-gradient;
+    margin: 0;
+    color: white;
+    padding: 86px 0px 60px 60px;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-wrap: wrap;
+      height: unset;
+      width: 60vw;
+      margin-top: -120px;
+    }
+    .notificationContainer {
+      display: flex;
+      @include tablet {
+        flex-wrap: wrap;
+      }
+      .notificationMessage {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @include tablet {
+          width: 480px;
+          // width: 90% !important;
+        }
+        @include mobile {
+          min-width: unset;
+          width: 90% !important;
+        }
+        .message {
+          color: var(--Background---F2F2F2, #f2f2f2);
+          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          font-size: 31px;
+          font-style: normal;
+          font-weight: 500;
+          word-wrap: break-word;
+          flex-grow: 1;
+
+          @include mobile {
+            width: 90% !important;
+          }
+        }
+        .messageBottom {
+          color: var(--Background---F2F2F2, #f2f2f2);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%;
+          @include mobile {
+          }
+        }
+      }
+
+      .notificationCarousel {
+        overflow: scroll;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        padding: 6px 0px 0px 46px;
+        scrollbar-width: none;
+        @include tablet {
+          margin-top: 60px;
+        }
+      }
+      .notificationCarousel::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .cohortContainer {
+      display: flex;
+      margin-top: 72px;
+      // flex-wrap: wrap;
+      @include tablet {
+        .cohortImage {
+          width: 100%;
+          margin-left: calc(50% - 168px);
+        }
+      }
+      .cohortText {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        gap: 16px;
+        padding: 20px 60px 94px 38px;
+        @include tablet {
+          margin-top: 36px;
+        }
+        .message {
+          color: var(--Background---F2F2F2, #f2f2f2);
+          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          font-size: 31px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%;
+        }
+        .messageBottom {
+          color: var(--Background---F2F2F2, #f2f2f2);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%;
+        }
+      }
+    }
+    .testimonials {
+      margin-top: 22px;
+      border-bottom: 1px solid rgba(229, 229, 230, 0.5);
+      width: 100%;
+      p {
+        color: var(--Background---F2F2F2, #f2f2f2);
+        text-align: right;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        padding-bottom: 22px;
+        padding-right: 60px;
+      }
+    }
+    .carouselContianer {
+      margin-top: 40px;
+      align-items: start;
+      display: flex;
+      position: relative;
+      gap: 40px;
+
+      @include tablet {
+        flex-wrap: wrap;
+        overflow: hidden;
+        width: 100% !important;
+        margin-top: -50px;
+      }
+
+      .carouselCom {
+        min-width: 400px;
+        margin: 0;
+        width: 100%;
+      }
+
+      .lochIcon {
+        margin: 0;
+        position: relative;
+        height: 136px;
+        width: 60px;
+        @include tablet {
+          margin-left: calc(30vw - 30px);
+        }
+        .vecPos {
+          position: absolute;
+          height: 60px;
+          bottom: 0;
+
+          @keyframes spin {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          > svg {
+            animation: spin 2s infinite linear;
+          }
+        }
+      }
+    }
+  }
+  .rightColumn {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    flex: 4;
+    padding: 8vw;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    gap: 32px;
+    background-color: white;
+    @include tablet {
+      height: unset;
+      z-index: 100;
+      display: block;
+    }
+    h1 {
+      font-size: 39px;
+      color: var(--grey-300, #b0b1b3);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      input {
+        padding: 20px 24px;
+        font-size: 16px;
+        border-radius: 12px;
+        border: 1px solid var(--grey-100, #e5e5e6);
+        background: #fff;
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.04),
+          0px 4px 10px 0px rgba(0, 0, 0, 0.04);
+      }
+      input::placeholder {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        color: var(--grey-200, #cacbcc);
+      }
+      button {
+        padding: 18px 28px;
+        border-radius: 12px;
+        border: 1px solid var(--grey-900, #19191a);
+        background: var(--grey-900, #19191a);
+        border-radius: 8px;
+        border: 1px solid var(--grey-900, #19191a);
+        background: var(--grey-900, #19191a);
+        color: var(--White, #fff);
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+      }
+      p {
+        color: var(--grey-900, #19191a);
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+/* Carousel container */
+.carousel {
+  overflow: hidden;
+  position: relative;
+  // touch-action: pan-y; /* For better touch support */
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  display: flex;
+  padding: 12px;
+}

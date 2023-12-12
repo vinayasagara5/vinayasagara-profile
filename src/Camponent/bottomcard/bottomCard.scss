@@ -1,0 +1,38 @@
+.b-cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 353px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  border-radius: 12px;
+  background: var(--White, #fff);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.04),
+    0px 4px 10px 0px rgba(0, 0, 0, 0.04);
+  .header {
+    .name {
+      color: var(--grey-900, #19191a);
+      font-size: 16px;
+      margin-right: 4px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 19.2px */
+    }
+    .designation {
+      color: var(--grey-400, #96979a);
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+    }
+  }
+  .cardContent {
+    color: var(--text-5, #1d2129);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+  }
+}
